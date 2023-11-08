@@ -17,16 +17,9 @@ namespace TestMainteneace.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<GetQueryUserApiAuthResponse>>> GetAll(CancellationToken cancellationToken)
         {
-            try
-            {
-                var result = await _mediator.Send(new GetQueryUserApiAuthRequest(),cancellationToken);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
+            var result = await _mediator.Send(new GetQueryUserApiAuthRequest(), cancellationToken);
+            return Ok(result);
 
-                return BadRequest(ex.Message);
-            }
         }
     }
 }

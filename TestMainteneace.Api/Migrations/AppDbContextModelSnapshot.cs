@@ -22,6 +22,55 @@ namespace TestMainteneace.Api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("TesteMainteneace.Domain.Entities.LocalExecutation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DateUpdated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Local")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("TesteMainteneace.Domain.Entities.OrderService", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DateUpdated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<int>("LocalExecutationId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocalExecutationId");
+
+                    b.ToTable("tab_order_service");
+                });
+
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.UserAuth", b =>
                 {
                     b.Property<Guid>("Id")
@@ -46,6 +95,17 @@ namespace TestMainteneace.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tab_user_auth");
+                });
+
+            modelBuilder.Entity("TesteMainteneace.Domain.Entities.OrderService", b =>
+                {
+                    b.HasOne("TesteMainteneace.Domain.Entities.LocalExecutation", "LocalExecutation")
+                        .WithMany()
+                        .HasForeignKey("LocalExecutationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LocalExecutation");
                 });
 #pragma warning restore 612, 618
         }

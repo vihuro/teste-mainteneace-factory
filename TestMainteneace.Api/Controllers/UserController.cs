@@ -20,40 +20,17 @@ namespace TestMainteneace.Api.Controllers
         public async Task<ActionResult<UserResponse>> Create(CreateUserRequest request,
                                                               CancellationToken cancellationToken)
         {
-            try
-            {
-                var result = await _mediator.Send(request, cancellationToken);
+            var result = await _mediator.Send(request, cancellationToken);
+            return Created("", result);
 
-                /*var validator = new CreateUserValidator();
-                var validationResult = await validator.ValidateAsync(request);
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(validationResult.Errors);
-                    
-                }*/
-
-                return Created("", result);
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
         }
         [HttpPut]
         public async Task<ActionResult<List<UserResponse>>> UpdateList(CancellationToken cancellationToken)
         {
-            try
-            {
-                var result = await _mediator.Send(new GetUserApiAuthForThisServiceRequest(), cancellationToken);
+            var result = await _mediator.Send(new GetUserApiAuthForThisServiceRequest(), cancellationToken);
 
-                return Created("", result);
-            }
-            catch (Exception ex)
-            {
+            return Created("", result);
 
-                return BadRequest(ex.Message);
-            }
         }
     }
 }

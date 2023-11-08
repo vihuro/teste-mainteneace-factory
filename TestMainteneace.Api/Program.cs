@@ -1,5 +1,6 @@
 using TesteMainteneace.Application;
 using TesteMainteneace.Persistence;
+using TestMainteneace.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,9 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+app.UseMiddleware(typeof(ErrorHandleMiddlewares));
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

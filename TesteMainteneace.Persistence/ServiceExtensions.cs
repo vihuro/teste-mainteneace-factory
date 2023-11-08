@@ -25,6 +25,7 @@ namespace TesteMainteneace.Persistence
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserAuthRepository, UserAuthRepository>();
             services.AddScoped<IUserAuthApiRepository, UserAuthApiRepository>();
+            services.AddScoped<ILocaleExecutationRepository, LocaleExecurationRepository>();
 
         }
     }
