@@ -1,0 +1,11 @@
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\bin\Debug\net7.0\TesteMainteneace.Domain.deps.json
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\bin\Debug\net7.0\TesteMainteneace.Domain.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\bin\Debug\net7.0\TesteMainteneace.Domain.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\TesteMainteneace.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\TesteMainteneace.Domain.AssemblyInfoInputs.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\TesteMainteneace.Domain.AssemblyInfo.cs
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\TesteMainteneace.Domain.csproj.CoreCompileInputs.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\TesteMainteneace.Domain.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\refint\TesteMainteneace.Domain.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\TesteMainteneace.Domain.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Domain\obj\Debug\net7.0\ref\TesteMainteneace.Domain.dll

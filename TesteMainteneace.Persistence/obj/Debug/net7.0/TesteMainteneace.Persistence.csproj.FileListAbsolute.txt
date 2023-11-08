@@ -1,0 +1,15 @@
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\bin\Debug\net7.0\TesteMainteneace.Persistence.deps.json
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\bin\Debug\net7.0\TesteMainteneace.Persistence.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\bin\Debug\net7.0\TesteMainteneace.Persistence.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\bin\Debug\net7.0\TesteMainteneace.Domain.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\bin\Debug\net7.0\TesteMainteneace.Domain.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.csproj.AssemblyReference.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.AssemblyInfoInputs.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.AssemblyInfo.cs
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.csproj.CopyComplete
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\refint\TesteMainteneace.Persistence.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\TesteMainteneace.Persistence.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Persistence\obj\Debug\net7.0\ref\TesteMainteneace.Persistence.dll

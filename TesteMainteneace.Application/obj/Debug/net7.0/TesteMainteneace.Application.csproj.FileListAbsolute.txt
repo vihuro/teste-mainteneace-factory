@@ -1,0 +1,15 @@
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\bin\Debug\net7.0\TesteMainteneace.Application.deps.json
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\bin\Debug\net7.0\TesteMainteneace.Application.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\bin\Debug\net7.0\TesteMainteneace.Application.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\bin\Debug\net7.0\TesteMainteneace.Domain.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\bin\Debug\net7.0\TesteMainteneace.Domain.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.csproj.AssemblyReference.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.AssemblyInfoInputs.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.AssemblyInfo.cs
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.csproj.CoreCompileInputs.cache
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.csproj.CopyComplete
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\refint\TesteMainteneace.Application.dll
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\TesteMainteneace.Application.pdb
+C:\Users\thr\Desktop\CleanCode\TestMainteneace\TesteMainteneace.Application\obj\Debug\net7.0\ref\TesteMainteneace.Application.dll
