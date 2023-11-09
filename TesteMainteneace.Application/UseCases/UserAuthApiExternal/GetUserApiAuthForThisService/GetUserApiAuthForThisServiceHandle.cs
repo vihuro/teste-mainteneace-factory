@@ -29,7 +29,7 @@ namespace TesteMainteneace.Application.UseCases.UserAuthApiExternal.GetUserApiAu
         public async Task<List<UserResponse>> Handle(GetUserApiAuthForThisServiceRequest request, 
                                                         CancellationToken cancellationToken)
         {
-            var listUsersApiExternal = await _userApiAuthRespository.GetList();
+            var listUsersApiExternal = await _userApiAuthRespository.GetList(cancellationToken);
 
             var listUsersInThisService = await _userAuthRepository.GetAll(cancellationToken);
 

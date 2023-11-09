@@ -17,7 +17,8 @@ namespace TesteMainteneace.Persistence.Repositories
             Context.Users.AddRangeAsync(users, cancellationToken);
         }
 
-        public async Task<UserAuth> GetByUserName(string userName, CancellationToken cancellationToken)
+        public async Task<UserAuth> GetByUserName(string userName, 
+                                                  CancellationToken cancellationToken)
         {
             return await Context.Users
                 .FirstOrDefaultAsync(x =>

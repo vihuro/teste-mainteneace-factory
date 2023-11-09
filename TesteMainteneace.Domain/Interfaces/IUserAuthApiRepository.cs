@@ -6,6 +6,6 @@ namespace TesteMainteneace.Domain.Interfaces
 {
     public interface IUserAuthApiRepository
     {
-        Task<List<UserAuthApi>> GetList();
+        Task<List<UserAuthApi>> GetList(CancellationToken cancellationToken);
     }
 }

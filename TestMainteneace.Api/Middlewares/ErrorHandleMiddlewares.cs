@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net;
-using System.Threading.Tasks;
 using TestMainteneace.Api.Middlewares.Models;
 
 namespace TestMainteneace.Api.Middlewares

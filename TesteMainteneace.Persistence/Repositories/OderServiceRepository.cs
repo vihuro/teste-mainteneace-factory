@@ -5,9 +5,9 @@ using TesteMainteneace.Persistence.Context;
 
 namespace TesteMainteneace.Persistence.Repositories
 {
-    public class OderServiceRepositorie : BaseEntityIntRepository<OrderService>, IOrderServiceRepository
+    public class OderServiceRepository : BaseEntityIntRepository<OrderService>, IOrderServiceRepository
     {
-        public OderServiceRepositorie(AppDbContext context) : base(context) { }
+        public OderServiceRepository(AppDbContext context) : base(context) { }
 
         public Task<List<OrderService>> GetByLocaleExecutation(int id, CancellationToken cancellationToken)
         {

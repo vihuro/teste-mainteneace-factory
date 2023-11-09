@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b1kb8ZA10s/lAxnNCKQvbGhgOknTrhiU/F6C3YdVWRGFfK6HwmNry9NPEyx97jUk3ImXA5GAA2Xf//C/+9Mp4g==",
+  "dgSpecHash": "B1Zgp5cMK3U/UAnbU3IRdLnXX9+J1vqnSlsgMMe5X9ZP6mBFM9jFOELLsELoU5BCJB6PX3b1jHbyoaQBeZsvAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thr\\Desktop\\CleanCode\\TestMainteneace\\TesteMainteneace.Domain\\TesteMainteneace.Domain.csproj",
+  "projectFilePath": "C:\\Users\\vitor\\Desktop\\.NET\\teste-mainteneace-factory\\TesteMainteneace.Domain\\TesteMainteneace.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

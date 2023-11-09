@@ -20,7 +20,7 @@ namespace TesteMainteneace.Application.UseCases.UserAuthApiExternal.GetQueryUser
         public async Task<List<GetQueryUserApiAuthResponse>> Handle(GetQueryUserApiAuthRequest request,
                                                                     CancellationToken cancellationToken)
         {
-            var usersInApiAuth = await _userApiRepository.GetList();
+            var usersInApiAuth = await _userApiRepository.GetList(cancellationToken);
 
             return _mapper.Map<List<GetQueryUserApiAuthResponse>>(usersInApiAuth);
 
