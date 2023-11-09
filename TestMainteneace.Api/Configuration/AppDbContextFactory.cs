@@ -20,6 +20,7 @@ namespace TestMainteneace.Api.Configuration
             var builder = new DbContextOptionsBuilder<AppDbContext>()
                 .UseNpgsql(config.GetConnectionString("teste_mainteneace"),
                                                         b => b.MigrationsAssembly("TestMainteneace.Api"));
+            Console.WriteLine("hahaha")
 
             return new AppDbContext(builder.Options);
         }
