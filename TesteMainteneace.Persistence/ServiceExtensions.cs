@@ -21,11 +21,13 @@ namespace TesteMainteneace.Persistence
             {
                 op.Andress = configuration.GetSection("AndressApiAuth:Andress").Value;
             });
+            services.AddSingleton<MongoDbContext>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserAuthRepository, UserAuthRepository>();
             services.AddScoped<IUserAuthApiRepository, UserAuthApiRepository>();
             services.AddScoped<ILocaleExecutationRepository, LocaleExecurationRepository>();
+            services.AddScoped<ILogsRepository, LogsRepository>();
 
         }
     }

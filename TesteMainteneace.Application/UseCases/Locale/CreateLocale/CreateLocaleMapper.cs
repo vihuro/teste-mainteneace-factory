@@ -7,9 +7,9 @@ namespace TesteMainteneace.Application.UseCases.Locale.CreateLocale
     {
         public CreateLocaleMapper()
         {
-            CreateMap<CreateLocaleRequest, LocalExecutation>()
+            CreateMap<CreateLocaleRequest, LocalExecutationEntity>()
                 .ForMember(x => x.Local, map => map.MapFrom(src => src.Name));
-            CreateMap<LocalExecutation, CreateLocaleResponse>()
+            CreateMap<LocalExecutationEntity, CreateLocaleResponse>()
                 .ForMember(x => x.Name, map => map.MapFrom(src => src.Local));
         }
 

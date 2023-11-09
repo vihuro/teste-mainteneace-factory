@@ -25,7 +25,7 @@ namespace TesteMainteneace.Application.UseCases.Locale.CreateLocale
         public async Task<CreateLocaleResponse> Handle(CreateLocaleRequest request, 
                                                         CancellationToken cancellationToken)
         {
-            var location = _mapper.Map<LocalExecutation>(request);
+            var location = _mapper.Map<LocalExecutationEntity>(request);
             _locationRepository.Create(location);
 
             await _unitOfWork.Commit(cancellationToken);

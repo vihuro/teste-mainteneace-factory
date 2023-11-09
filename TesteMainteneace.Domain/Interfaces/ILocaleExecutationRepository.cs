@@ -2,8 +2,8 @@
 
 namespace TesteMainteneace.Domain.Interfaces
 {
-    public interface ILocaleExecutationRepository : IBaseIntRepository<LocalExecutation>
+    public interface ILocaleExecutationRepository : IBaseIntRepository<LocalExecutationEntity>
     {
-        Task<LocalExecutation> GetByNameLocale(string nameLocale, CancellationToken cancellationToken);
+        Task<LocalExecutationEntity> GetByNameLocale(string nameLocale, CancellationToken cancellationToken);
     }
 }

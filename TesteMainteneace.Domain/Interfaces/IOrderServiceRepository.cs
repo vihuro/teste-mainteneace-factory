@@ -2,8 +2,8 @@
 
 namespace TesteMainteneace.Domain.Interfaces
 {
-    public interface IOrderServiceRepository : IBaseIntRepository<OrderService>
+    public interface IOrderServiceRepository : IBaseIntRepository<OrderServiceEntity>
     {
-        Task<List<OrderService>> GetByLocaleExecutation(int id,CancellationToken cancellationToken);
+        Task<List<OrderServiceEntity>> GetByLocaleExecutation(int id,CancellationToken cancellationToken);
     }
 }

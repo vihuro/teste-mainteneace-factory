@@ -5,11 +5,11 @@ using TesteMainteneace.Persistence.Context;
 
 namespace TesteMainteneace.Persistence.Repositories
 {
-    public class LocaleExecurationRepository : BaseEntityIntRepository<LocalExecutation>, ILocaleExecutationRepository
+    public class LocaleExecurationRepository : BaseEntityIntRepository<LocalExecutationEntity>, ILocaleExecutationRepository
     {
         public LocaleExecurationRepository(AppDbContext context) : base(context) { }
 
-        public async Task<LocalExecutation> GetByNameLocale(string nameLocale,
+        public async Task<LocalExecutationEntity> GetByNameLocale(string nameLocale,
                                                             CancellationToken cancellationToken)
         {
             var item = await Context.Locations.FirstOrDefaultAsync(cancellationToken);

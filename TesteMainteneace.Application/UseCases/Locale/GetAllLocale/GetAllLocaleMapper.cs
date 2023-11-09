@@ -7,7 +7,7 @@ namespace TesteMainteneace.Application.UseCases.Locale.GetAllLocale
     {
         public GetAllLocaleMapper() 
         {
-            CreateMap<LocalExecutation, LocaleDefault>();
+            CreateMap<LocalExecutationEntity, LocaleDefault>();
         }
     }
 }
