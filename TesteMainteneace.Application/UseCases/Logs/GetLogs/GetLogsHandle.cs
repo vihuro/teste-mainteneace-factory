@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Interfaces.System;
 
 namespace TesteMainteneace.Application.UseCases.Logs.GetLogs
 {

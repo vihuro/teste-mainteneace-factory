@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Persistence.Interfaces;
+using TesteMainteneace.Domain.Entities.User;
+using TesteMainteneace.Domain.Interfaces.System;
+using TesteMainteneace.Domain.Interfaces.User;
 
 namespace TesteMainteneace.Application.UseCases.User.CreateUser
 {

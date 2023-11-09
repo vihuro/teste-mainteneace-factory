@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Entities.Order;
+using TesteMainteneace.Domain.Interfaces.Order;
 using TesteMainteneace.Persistence.Context;
 
 namespace TesteMainteneace.Persistence.Repositories
@@ -12,7 +12,7 @@ namespace TesteMainteneace.Persistence.Repositories
         public Task<List<OrderServiceEntity>> GetByLocaleExecutation(int id, CancellationToken cancellationToken)
         {
             var item = Context.Orders.Where(x =>
-                                x.LocalExecutationId == id)
+                                x.LocationMainteneaceId == id)
                                 .ToListAsync(cancellationToken);
 
             return item;

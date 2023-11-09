@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
 using TesteMainteneace.Application.UseCases.User;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Domain.Interfaces;
-using TesteMainteneace.Persistence.Interfaces;
+using TesteMainteneace.Domain.Entities.User;
+using TesteMainteneace.Domain.Interfaces.System;
+using TesteMainteneace.Domain.Interfaces.User;
 
 namespace TesteMainteneace.Application.UseCases.UserAuthApiExternal.GetUserApiAuthForThisService
 {

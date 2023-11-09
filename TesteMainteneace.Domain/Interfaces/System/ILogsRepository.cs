@@ -1,6 +1,6 @@
-﻿using TesteMainteneace.Domain.Entities;
+﻿using TesteMainteneace.Domain.Entities.System;
 
-namespace TesteMainteneace.Domain.Interfaces
+namespace TesteMainteneace.Domain.Interfaces.System
 {
     public interface ILogsRepository
     {

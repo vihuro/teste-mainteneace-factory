@@ -1,6 +1,6 @@
-﻿using TesteMainteneace.Domain.Entities;
+﻿using TesteMainteneace.Domain.Entities.Base;
 
-namespace TesteMainteneace.Persistence.Interfaces
+namespace TesteMainteneace.Domain.Interfaces.Base
 {
     public interface IBaseGuidRepository<T> where T : BaseEntityGuid
     {

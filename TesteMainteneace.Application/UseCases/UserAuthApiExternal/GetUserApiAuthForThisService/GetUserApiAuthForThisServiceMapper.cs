@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using TesteMainteneace.Application.UseCases.User;
-using TesteMainteneace.Domain.Entities;
+using TesteMainteneace.Domain.Entities.User;
 
 namespace TesteMainteneace.Application.UseCases.UserAuthApiExternal.GetUserApiAuthForThisService
 {

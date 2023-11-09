@@ -1,6 +1,6 @@
 ﻿
 using AutoMapper;
-using TesteMainteneace.Domain.Entities;
+using TesteMainteneace.Domain.Entities.System;
 
 namespace TesteMainteneace.Application.UseCases.Logs.GetLogs
 {

@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Entities.System;
+using TesteMainteneace.Domain.Interfaces.System;
 using TesteMainteneace.Persistence.Context;
 
 namespace TesteMainteneace.Persistence.Repositories

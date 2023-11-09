@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using TesteMainteneace.Domain.Entities;
+using TesteMainteneace.Domain.Entities.System;
 using TesteMainteneace.Persistence.Utils;
 
 namespace TesteMainteneace.Persistence.Context

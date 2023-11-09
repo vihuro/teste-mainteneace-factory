@@ -1,6 +1,7 @@
-﻿using TesteMainteneace.Domain.Entities;
+﻿using TesteMainteneace.Domain.Entities.User;
+using TesteMainteneace.Domain.Interfaces.Base;
 
-namespace TesteMainteneace.Persistence.Interfaces
+namespace TesteMainteneace.Domain.Interfaces.User
 {
     public interface IUserAuthRepository : IBaseGuidRepository<UserAuth>
     {

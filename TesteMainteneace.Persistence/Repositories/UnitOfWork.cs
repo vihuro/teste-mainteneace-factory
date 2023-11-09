@@ -1,7 +1,7 @@
 ﻿
 
+using TesteMainteneace.Domain.Interfaces.System;
 using TesteMainteneace.Persistence.Context;
-using TesteMainteneace.Persistence.Interfaces;
 
 namespace TesteMainteneace.Persistence.Repositories
 {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Interfaces.Location;
 
 namespace TesteMainteneace.Application.UseCases.Locale.GetAllLocale
 {
@@ -17,9 +17,11 @@ namespace TesteMainteneace.Application.UseCases.Locale.GetAllLocale
             _mapper = mapper;
         }
 
-        public async Task<List<LocaleDefault>> Handle(GetAllLocaleRequest request, CancellationToken cancellationToken)
+        public async Task<List<LocaleDefault>> Handle(GetAllLocaleRequest request, 
+                                                        CancellationToken cancellationToken)
         {
-            var listLocations = await _locationRepository.GetAll(cancellationToken);
+            var listLocations = await _locationRepository
+                                        .GetWithUser(cancellationToken);
 
             return _mapper.Map<List<LocaleDefault>>(listLocations);
         }

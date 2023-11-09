@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Interfaces.Location;
 
 namespace TesteMainteneace.Application.UseCases.Locale.CreateLocale
 {
@@ -11,7 +11,11 @@ namespace TesteMainteneace.Application.UseCases.Locale.CreateLocale
         {
             _localExecutationRepository = localeExecutationRepository;
 
-            RuleFor(x => x.Name)
+            RuleFor(x => x.Name.ToUpper())
+                .NotNull()
+                .NotEmpty();
+
+            RuleFor(x => x.UserId)
                 .NotNull()
                 .NotEmpty();
 

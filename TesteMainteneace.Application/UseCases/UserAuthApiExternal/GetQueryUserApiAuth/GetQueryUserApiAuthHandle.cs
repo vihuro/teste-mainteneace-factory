@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Interfaces.User;
 
 namespace TesteMainteneace.Application.UseCases.UserAuthApiExternal.GetQueryUserApiAuth
 {

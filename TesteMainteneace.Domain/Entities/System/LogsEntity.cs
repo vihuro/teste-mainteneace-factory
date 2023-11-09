@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace TesteMainteneace.Domain.Entities
+namespace TesteMainteneace.Domain.Entities.System
 {
     public sealed class LogsEntity
     {

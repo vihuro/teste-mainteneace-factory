@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Entities.System;
+using TesteMainteneace.Domain.Interfaces.System;
 
 namespace TesteMainteneace.Application.UseCases.Logs.CreateLogs
 {

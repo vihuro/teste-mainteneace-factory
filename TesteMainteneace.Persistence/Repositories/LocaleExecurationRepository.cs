@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Entities.Location;
+using TesteMainteneace.Domain.Interfaces.Location;
 using TesteMainteneace.Persistence.Context;
 
 namespace TesteMainteneace.Persistence.Repositories
@@ -13,6 +13,15 @@ namespace TesteMainteneace.Persistence.Repositories
                                                             CancellationToken cancellationToken)
         {
             var item = await Context.Locations.FirstOrDefaultAsync(cancellationToken);
+
+            return item;
+        }
+
+        public async Task<List<LocalExecutationEntity>> GetWithUser(CancellationToken cancellationToken)
+        {
+            var item = await Context.Locations
+                .Include(u => u.UserAuth)
+                .ToListAsync(cancellationToken);
 
             return item;
         }

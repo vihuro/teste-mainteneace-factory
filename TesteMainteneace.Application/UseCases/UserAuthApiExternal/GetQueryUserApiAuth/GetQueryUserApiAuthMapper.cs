@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using TesteMainteneace.Domain.Entities;
+using TesteMainteneace.Domain.Entities.User;
 
 namespace TesteMainteneace.Application.UseCases.UserAuthApiExternal.GetQueryUserApiAuth
 {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using TesteMainteneace.Domain.Entities;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Entities.User;
+using TesteMainteneace.Domain.Interfaces.User;
 using TesteMainteneace.Persistence.Utils;
 
 namespace TesteMainteneace.Persistence.Repositories

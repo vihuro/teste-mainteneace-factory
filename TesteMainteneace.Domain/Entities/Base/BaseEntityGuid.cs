@@ -1,4 +1,4 @@
-﻿namespace TesteMainteneace.Domain.Entities
+﻿namespace TesteMainteneace.Domain.Entities.Base
 {
     public abstract class BaseEntityGuid
     {

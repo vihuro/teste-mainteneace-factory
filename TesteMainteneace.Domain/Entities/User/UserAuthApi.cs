@@ -1,10 +1,10 @@
-﻿namespace TesteMainteneace.Domain.Entities
+﻿namespace TesteMainteneace.Domain.Entities.User
 {
     public class UserAuthApi
     {
         public Guid UsuarioId { get; set; }
         public string Nome { get; set; }
-        public string Apelido { get;set; }
+        public string Apelido { get; set; }
         public bool Ativo { get; set; }
     }
     public class ResponseApiAuth

@@ -1,8 +1,6 @@
-﻿
+﻿using TesteMainteneace.Domain.Entities.User;
 
-using TesteMainteneace.Domain.Entities;
-
-namespace TesteMainteneace.Domain.Interfaces
+namespace TesteMainteneace.Domain.Interfaces.User
 {
     public interface IUserAuthApiRepository
     {

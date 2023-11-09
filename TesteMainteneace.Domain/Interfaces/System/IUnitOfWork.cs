@@ -1,4 +1,4 @@
-﻿namespace TesteMainteneace.Persistence.Interfaces
+﻿namespace TesteMainteneace.Domain.Interfaces.System
 {
     public interface IUnitOfWork
     {

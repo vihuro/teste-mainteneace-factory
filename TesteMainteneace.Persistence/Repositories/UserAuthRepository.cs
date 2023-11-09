@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TesteMainteneace.Domain.Entities;
+using TesteMainteneace.Domain.Entities.User;
+using TesteMainteneace.Domain.Interfaces.User;
 using TesteMainteneace.Persistence.Context;
-using TesteMainteneace.Persistence.Interfaces;
 
 namespace TesteMainteneace.Persistence.Repositories
 {

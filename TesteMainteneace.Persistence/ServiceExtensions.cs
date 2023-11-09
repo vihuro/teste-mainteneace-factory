@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TesteMainteneace.Domain.Interfaces;
+using TesteMainteneace.Domain.Interfaces.Location;
+using TesteMainteneace.Domain.Interfaces.System;
+using TesteMainteneace.Domain.Interfaces.User;
 using TesteMainteneace.Persistence.Context;
-using TesteMainteneace.Persistence.Interfaces;
 using TesteMainteneace.Persistence.Repositories;
 using TesteMainteneace.Persistence.Utils;
 
