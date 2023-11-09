@@ -1,0 +1,13 @@
+/.vs
+
+
+
+/TesteMainteneace.Persistence/obj/*
+/TesteMainteneace.Application/obj/*
+/TesteMainteneace.Domain/obj/*
+/TesteMainteneace.Api/obj/*
+
+/TesteMainteneace.Persistence/bin/Debug/*
+/TesteMainteneace.Application/bin/Debug/*
+/TesteMainteneace.Domain/bin/Debug/*
+/TesteMainteneace.Api/bin/Debug/*
