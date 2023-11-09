@@ -22,13 +22,11 @@ namespace TesteMainteneace.Persistence.Repositories
         }
 
         public async Task<List<LogsEntity>> GetAll(CancellationToken cancellationToken)
-        {
+        { 
             var list = await _mongoDbContext.Logs
                             .Find(_ => true).ToListAsync(cancellationToken);
 
             return list;
-
-            throw new NotImplementedException();
         }
 
         public Task<LogsEntity> GetLogId(Guid Id, CancellationToken cancellationToken)

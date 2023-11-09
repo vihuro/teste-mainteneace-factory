@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using AutoMapper;
+using TesteMainteneace.Domain.Entities;
 
 namespace TesteMainteneace.Application.UseCases.Logs.GetLogs
 {
-    internal class GetLogsMapper
+    public class GetLogsMapper : Profile
     {
+        public GetLogsMapper() 
+        {
+            CreateMap<LogsEntity, GetLogsResponse>();
+        }
     }
 }

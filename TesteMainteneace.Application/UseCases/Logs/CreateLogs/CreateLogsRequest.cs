@@ -2,5 +2,5 @@
 
 namespace TesteMainteneace.Application.UseCases.Logs.CreateLogs
 {
-    public sealed record CreateLogsRequest(Guid Id, string LogRef, List<string> Message) : IRequest<CreateLogsResponse>;
+    public sealed record CreateLogsRequest(Guid Id, string ClassError, string LineError, string LogRef, List<string> Erros) : IRequest<CreateLogsResponse>;
 }

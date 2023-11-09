@@ -9,7 +9,11 @@ namespace TesteMainteneace.Domain.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string InternalId { get; set; }
         public string Id { get; set; }
+        public string ClassError { get; set; }
+        public string LineError { get; set; }
+        public DateTime DateTimeCreated { get; set; }
         public string LogRef { get; set; }
-        public List<string> Message { get; set; }
+        public List<string> Erros { get; set; }
+
     }
 }

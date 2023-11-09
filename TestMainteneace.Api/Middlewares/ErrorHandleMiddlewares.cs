@@ -1,6 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using MediatR;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net;
+using TesteMainteneace.Application.UseCases.Logs.CreateLogs;
+using TesteMainteneace.Domain.Interfaces;
 using TestMainteneace.Api.Middlewares.Models;
 
 namespace TestMainteneace.Api.Middlewares
@@ -15,7 +18,7 @@ namespace TestMainteneace.Api.Middlewares
             _next = next;
         }
 
-        public async Task Invoke(HttpContext httpContext)
+        public async Task Invoke(HttpContext httpContext, IMediator meddiator)
         {
             try
             {
@@ -24,11 +27,11 @@ namespace TestMainteneace.Api.Middlewares
             catch (Exception ex)
             {
 
-                await HandlwExceptionAsync(httpContext, ex);
+                await HandlwExceptionAsync(httpContext, ex, meddiator);
             };
         }
 
-        private static Task HandlwExceptionAsync(HttpContext httpContext, Exception exception)
+        private static Task HandlwExceptionAsync(HttpContext httpContext, Exception exception, IMediator meddiator)
         {
             var response = httpContext.Response;
             response.ContentType = "application/json";
@@ -58,6 +61,8 @@ namespace TestMainteneace.Api.Middlewares
                     break;
                 }
             }
+            meddiator.Send(new CreateLogsRequest(
+                Id: Guid.NewGuid(),path,line,statusCode.ToString(),separetString));
 
 
             var responseModel = new MiddlewareModel(statusCode.ToString(),
