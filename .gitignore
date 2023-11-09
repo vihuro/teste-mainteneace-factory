@@ -5,9 +5,9 @@
 /TesteMainteneace.Persistence/obj/*
 /TesteMainteneace.Application/obj/*
 /TesteMainteneace.Domain/obj/*
-/TesteMainteneace.Api/obj/*
+/TestMainteneace.Api/obj/*
 
 /TesteMainteneace.Persistence/bin/Debug/*
 /TesteMainteneace.Application/bin/Debug/*
 /TesteMainteneace.Domain/bin/Debug/*
-/TesteMainteneace.Api/bin/Debug/*
+/TestMainteneace.Api/bin/Debug/*
