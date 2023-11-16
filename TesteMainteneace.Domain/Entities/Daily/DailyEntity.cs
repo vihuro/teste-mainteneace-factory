@@ -10,7 +10,7 @@ namespace TesteMainteneace.Domain.Entities.Daily
     {
         public string Observation { get; set; }
         public Guid UserCreatedId { get; set; }
-        public UserAuth UserAuth { get; set; }
+        public UserAuth UserCreated { get; set; }
         public int OrderServiceId { get; set; }
         public OrderServiceEntity OrderService { get; set; }
     }

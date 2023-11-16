@@ -1,8 +1,8 @@
 ﻿
 
+using MediatR;
+
 namespace TesteMainteneace.Application.UseCases.OrderService.CreateOrderService
 {
-    internal class CreateOrderServiceRequest
-    {
-    }
+    public sealed record CreateOrderServiceRequest(string Description, int LocationMainteneaceId, Guid UserCreatedId, int TypeService, int Priority) : IRequest<OrderServiceResponseDefault>;
 }

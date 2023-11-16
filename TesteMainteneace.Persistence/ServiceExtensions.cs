@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TesteMainteneace.Domain.Interfaces.Location;
+using TesteMainteneace.Domain.Interfaces.Order;
 using TesteMainteneace.Domain.Interfaces.System;
 using TesteMainteneace.Domain.Interfaces.User;
 using TesteMainteneace.Persistence.Context;
@@ -29,6 +30,7 @@ namespace TesteMainteneace.Persistence
             services.AddScoped<IUserAuthApiRepository, UserAuthApiRepository>();
             services.AddScoped<ILocaleExecutationRepository, LocaleExecurationRepository>();
             services.AddScoped<ILogsRepository, LogsRepository>();
+            services.AddScoped<IOrderServiceRepository, OderServiceRepository>();
 
         }
     }

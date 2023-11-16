@@ -12,9 +12,12 @@ namespace TesteMainteneace.Persistence.Repositories
         public async Task<LocalExecutationEntity> GetByNameLocale(string nameLocale,
                                                             CancellationToken cancellationToken)
         {
-            var item = await Context.Locations.FirstOrDefaultAsync(cancellationToken);
+            var item = await Context.Locations
+                .FirstOrDefaultAsync(x =>
+                        x.Local == nameLocale.ToUpper(), cancellationToken);
 
-            return item;
+
+            return new LocalExecutationEntity();
         }
 
         public async Task<List<LocalExecutationEntity>> GetWithUser(CancellationToken cancellationToken)

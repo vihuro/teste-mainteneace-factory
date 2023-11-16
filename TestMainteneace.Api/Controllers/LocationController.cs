@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TesteMainteneace.Application.UseCases.Locale;
 using TesteMainteneace.Application.UseCases.Locale.CreateLocale;
 using TesteMainteneace.Application.UseCases.Locale.GetAllLocale;
+using TesteMainteneace.Application.UseCases.Locale.GetByName;
 
 namespace TestMainteneace.Api.Controllers
 {
@@ -28,6 +29,13 @@ namespace TestMainteneace.Api.Controllers
         public async Task<ActionResult<List<LocaleDefault>>> GetList(CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(new GetAllLocaleRequest(), cancellationToken);
+            return Ok(result);
+        }
+        [HttpGet("{name}")]
+        public async Task<ActionResult<LocaleDefault>> GetByName(string name, CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(new GetByNameRequest(name), cancellationToken);
+
             return Ok(result);
         }
     }
