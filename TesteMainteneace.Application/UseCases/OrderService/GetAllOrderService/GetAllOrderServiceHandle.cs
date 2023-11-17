@@ -21,7 +21,9 @@ namespace TesteMainteneace.Application.UseCases.OrderService.GetAllOrderService
         {
             var result = await _orderServiceRepository.GetAllOrdersComplete(cancellationToken);
 
-            return _mapper.Map<List<OrderServiceResponseDefault>>(result);
+            var mapping = _mapper.Map<List<OrderServiceResponseDefault>>(result);
+
+            return mapping;
         }
     }
 }

@@ -1,23 +1,25 @@
 ﻿using AutoMapper;
+using TesteMainteneace.Application.UseCases.User;
 using TesteMainteneace.Domain.Entities.Order;
 using static TesteMainteneace.Application.UseCases.OrderService.ValidateEnunInOrderService;
 
-namespace TesteMainteneace.Application.UseCases.OrderService.GetAllOrderService
+
+namespace TesteMainteneace.Application.UseCases.OrderService
 {
-    public class GetAllOrderServiceMapper : Profile
+    public class OrderServiceResponseDefaultMapper : Profile
     {
-        public GetAllOrderServiceMapper()
+        public OrderServiceResponseDefaultMapper() 
         {
-            CreateMap<OrderServiceEntity, OrderServiceResponseDefault>()
+            CreateMap<OrderServiceEntity,OrderServiceResponseDefault>()
                 .ForMember(x => x.Situation, map => map.MapFrom(src => ValidateSituacion(src.Situacion)))
                 .ForMember(x => x.Priority, map => map.MapFrom(src => ValidatePriority(src.Priority)))
                 .ForMember(x => x.LocaleManinteace, map => map.MapFrom(src => src.LocationMainteneace.Local))
                 .ForMember(x => x.TypeService, map => map.MapFrom(src => ValidateTypeMainteneace(src.EType)))
-                .ForMember(x => x.UserRegisterd, map => map.MapFrom(src => new UserRegistered
+                .ForPath(x => x.UserRegisterd, map => map.MapFrom(src => new UserResponse
                 {
-                    Actived = src.UserCreated.Actived,
-                    Id = src.UserCreated.Id,
                     Name = src.UserCreated.Name,
+                    Actived = src.UserCreated.Actived,
+                    Id = src.UserCreatedId,
                     UserName = src.UserCreated.UserName
                 }));
         }

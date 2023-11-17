@@ -46,7 +46,7 @@ namespace TestMainteneace.Api.Controllers
             return Ok(result);
         }
         /// <summary>
-        /// Create location by name
+        /// Get location by name
         /// </summary>
         /// <param name="name"></param>
         /// <param name="cancellationToken"></param>

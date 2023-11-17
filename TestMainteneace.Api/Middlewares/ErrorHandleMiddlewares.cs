@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net;
 using TesteMainteneace.Application.UseCases.Logs.CreateLogs;
-using TesteMainteneace.Domain.Interfaces;
 using TestMainteneace.Api.Middlewares.Models;
 
 namespace TestMainteneace.Api.Middlewares

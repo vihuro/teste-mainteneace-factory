@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TesteMainteneace.Application.UseCases.OrderService;
 using TesteMainteneace.Application.UseCases.OrderService.CreateOrderService;
+using TesteMainteneace.Application.UseCases.OrderService.GetAllOrderService;
 
 namespace TestMainteneace.Api.Controllers
 {
@@ -29,6 +30,20 @@ namespace TestMainteneace.Api.Controllers
             var result = await _mediator.Send(request, cancellationToken);
 
             return Created("", result);
+        }
+        /// <summary>
+        /// Buscar todas ordens de serviço
+        /// </summary>
+        /// 
+        /// <param name="cancellationToken"></param>
+        /// 
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<List<OrderServiceResponseDefault>>> GetList(CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(new GetAllOrderServiceRequest(), cancellationToken);
+
+            return result;
         }
     }
 }

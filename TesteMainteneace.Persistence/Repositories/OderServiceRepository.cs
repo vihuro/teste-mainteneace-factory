@@ -15,14 +15,14 @@ namespace TesteMainteneace.Persistence.Repositories
                 .Include(l => l.LocationMainteneace)
                 .Include(u => u.UserCreated)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
 
             return item;
         }
 
-        public Task<List<OrderServiceEntity>> GetByLocaleExecutation(int id, CancellationToken cancellationToken)
+        public async Task<List<OrderServiceEntity>> GetByLocaleExecutation(int id, CancellationToken cancellationToken)
         {
-            var item = Context.Orders.Where(x =>
+            var item = await Context.Orders.Where(x =>
                                 x.LocationMainteneaceId == id)
                                 .ToListAsync(cancellationToken);
 
