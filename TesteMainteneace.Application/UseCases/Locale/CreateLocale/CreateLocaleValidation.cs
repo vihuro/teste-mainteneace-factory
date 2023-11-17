@@ -31,7 +31,7 @@ namespace TesteMainteneace.Application.UseCases.Locale.CreateLocale
                         .GetByNameLocale(request.Name.ToUpper(), 
                                           cancellationToken);
 
-            if (item == null) return true;
+            if (item.Id == 0) return true;
 
             return false;
         }

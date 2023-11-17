@@ -8,6 +8,6 @@ namespace TesteMainteneace.Domain.Entities.User
     {
         public string Name { get; set; }
         public string UserName { get; set; }
-        public string Actived { get; set; }
+        public bool Actived { get; set; }
     }
 }

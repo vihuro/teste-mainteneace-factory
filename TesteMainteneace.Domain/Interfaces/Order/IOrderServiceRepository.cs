@@ -6,5 +6,6 @@ namespace TesteMainteneace.Domain.Interfaces.Order
     public interface IOrderServiceRepository : IBaseIntRepository<OrderServiceEntity>
     {
         Task<List<OrderServiceEntity>> GetByLocaleExecutation(int id, CancellationToken cancellationToken);
+        Task<List<OrderServiceEntity>> GetAllOrdersComplete(CancellationToken cancellationToken);
     }
 }

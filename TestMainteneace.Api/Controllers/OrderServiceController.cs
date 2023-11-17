@@ -15,6 +15,13 @@ namespace TestMainteneace.Api.Controllers
         {
             _mediator = mediator;
         }
+        /// <summary>
+        /// Criar uma nova ordem de serviço
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// 
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<OrderServiceResponseDefault>> Create(CreateOrderServiceRequest request, 
                                                                             CancellationToken cancellationToken)

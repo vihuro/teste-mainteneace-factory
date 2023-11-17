@@ -51,7 +51,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasIndex("UserCreatedId");
 
-                    b.ToTable("tab_daily");
+                    b.ToTable("tab_daily", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.Flow.FlowEntity", b =>
@@ -73,7 +73,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tab_flow");
+                    b.ToTable("tab_flow", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.Location.LocalExecutationEntity", b =>
@@ -100,7 +100,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasIndex("UserAuthId");
 
-                    b.ToTable("tab_location");
+                    b.ToTable("tab_location", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.Order.OrderServiceEntity", b =>
@@ -141,7 +141,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasIndex("UserCreatedId");
 
-                    b.ToTable("tab_order_service");
+                    b.ToTable("tab_order_service", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.OrderFlow.UserFlow.EndUserFlow", b =>
@@ -168,7 +168,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasIndex("UserEndId");
 
-                    b.ToTable("tab_end_user_flow");
+                    b.ToTable("tab_end_user_flow", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.OrderFlow.UserFlow.InitialUserFlow", b =>
@@ -195,7 +195,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasIndex("UserInitialId");
 
-                    b.ToTable("tab_initial_user_flow");
+                    b.ToTable("tab_initial_user_flow", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.StatusOrder.FlowOrderServiceEntity", b =>
@@ -230,7 +230,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasIndex("OrderServiceId");
 
-                    b.ToTable("tab_flow_order_service");
+                    b.ToTable("tab_flow_order_service", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.User.UserAuth", b =>
@@ -256,7 +256,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tab_user_auth");
+                    b.ToTable("tab_user_auth", (string)null);
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.Daily.DailyEntity", b =>

@@ -17,6 +17,13 @@ namespace TestMainteneace.Api.Controllers
         {
             _mediator = mediator;
         }
+        /// <summary>
+        /// Create a new Location of mainteneace
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// 
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<CreateLocaleResponse>> CreateLocation(CreateLocaleRequest request,
                                                                                 CancellationToken cancellationToken)
@@ -25,12 +32,26 @@ namespace TestMainteneace.Api.Controllers
             return Created("", result);
 
         }
+        /// <summary>
+        /// Get all locations registers
+        /// </summary>
+        /// 
+        /// <param name="cancellationToken"></param>
+        /// 
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<List<LocaleDefault>>> GetList(CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(new GetAllLocaleRequest(), cancellationToken);
             return Ok(result);
         }
+        /// <summary>
+        /// Create location by name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="cancellationToken"></param>
+        /// 
+        /// <returns></returns>
         [HttpGet("{name}")]
         public async Task<ActionResult<LocaleDefault>> GetByName(string name, CancellationToken cancellationToken)
         {

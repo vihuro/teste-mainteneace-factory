@@ -19,5 +19,6 @@ namespace TesteMainteneace.Persistence.Context
         public DbSet<DailyEntity> Daily { get; set; }
         public DbSet<EndUserFlow> EndUserFlow { get; set; }
         public DbSet<LocalExecutationEntity> Locations { get; set; }
+
     }
 }
