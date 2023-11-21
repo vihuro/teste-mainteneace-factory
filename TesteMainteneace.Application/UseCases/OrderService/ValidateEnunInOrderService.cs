@@ -11,7 +11,7 @@ namespace TesteMainteneace.Application.UseCases.OrderService
                 case EPriority.LOW:
                     return "BAIXO";
                 case EPriority.MIDDLE:
-                    return "BAIXO";
+                    return "MÉDIO";
                 case EPriority.HIGH:
                     return "ALTO";
                 default:
@@ -58,6 +58,28 @@ namespace TesteMainteneace.Application.UseCases.OrderService
                 default:
                     return "TIPO DE MANUTENÇÃO NÃO ENCONTRADA!";
 
+            }
+        }
+        public static string ValidateCategoryService(ECategoty category)
+        {
+            switch (category) 
+            {
+                case ECategoty.ELETRICO:
+                    return "ELÉTRICO";
+                case ECategoty.MECANICO:
+                    return "MECÂNICO";
+                case ECategoty.HIDRAULICO:
+                    return "HIDRÁULICO";
+                case ECategoty.SERRALHERIA:
+                    return "SERRALHERIA";
+                case ECategoty.JARDINAGEM:
+                    return "JARDINAGEM";
+                case ECategoty.ALVENARIA:
+                    return "ALVERNARIA";
+                case ECategoty.OUTRO:
+                    return "OUTRO";
+                default:
+                    return "NÃO ENCONTRADO";
             }
         }
     }

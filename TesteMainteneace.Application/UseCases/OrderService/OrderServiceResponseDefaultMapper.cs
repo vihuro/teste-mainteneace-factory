@@ -14,7 +14,9 @@ namespace TesteMainteneace.Application.UseCases.OrderService
                 .ForMember(x => x.Situation, map => map.MapFrom(src => ValidateSituacion(src.Situacion)))
                 .ForMember(x => x.Priority, map => map.MapFrom(src => ValidatePriority(src.Priority)))
                 .ForMember(x => x.LocaleManinteace, map => map.MapFrom(src => src.LocationMainteneace.Local))
-                .ForMember(x => x.TypeService, map => map.MapFrom(src => ValidateTypeMainteneace(src.EType)))
+                .ForMember(x => x.TypeService, map => map.MapFrom(src => ValidateTypeMainteneace(src.Type)))
+                .ForMember(x => x.SuggestdMainteneaceDate, map => map.MapFrom(src => src.SuggestedMainteneaceDate))
+                .ForMember(x => x.Category, map => map.MapFrom(src => ValidateCategoryService(src.Category)))
                 .ForPath(x => x.UserRegisterd, map => map.MapFrom(src => new UserResponse
                 {
                     Name = src.UserCreated.Name,

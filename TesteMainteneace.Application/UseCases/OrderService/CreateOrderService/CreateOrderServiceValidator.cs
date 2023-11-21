@@ -17,10 +17,11 @@ namespace TesteMainteneace.Application.UseCases.OrderService.CreateOrderService
                 .NotEmpty()
                 .NotNull();
             RuleFor(x => x.TypeService)
+                .NotNull();
+            RuleFor(x => x.SuggestdMainteneaceDate)
                 .NotEmpty()
                 .NotNull();
             RuleFor(x => x.Priority)
-                .NotEmpty()
                 .NotNull();
         }
     }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TesteMainteneace.Persistence.Context;
@@ -11,9 +12,11 @@ using TesteMainteneace.Persistence.Context;
 namespace TestMainteneace.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231121125354_AddColumnSuggestedMainteneaceAndCategoryService")]
+    partial class AddColumnSuggestedMainteneaceAndCategoryService
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,6 +126,9 @@ namespace TestMainteneace.Api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
+                    b.Property<int>("EType")
+                        .HasColumnType("integer");
+
                     b.Property<int>("LocationMainteneaceId")
                         .HasColumnType("integer");
 
@@ -134,9 +140,6 @@ namespace TestMainteneace.Api.Migrations
 
                     b.Property<DateTime>("SuggestedMainteneaceDate")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("integer");
 
                     b.Property<Guid>("UserCreatedId")
                         .HasColumnType("uuid");

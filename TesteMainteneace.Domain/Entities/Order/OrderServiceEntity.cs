@@ -13,11 +13,13 @@ namespace TesteMainteneace.Domain.Entities.Order
         public string Description { get; set; }
         public int LocationMainteneaceId { get; set; }
         public LocalExecutationEntity LocationMainteneace { get; set; }
+        public DateTime SuggestedMainteneaceDate { get; set; }
         public Guid UserCreatedId { get; set; }
         public UserAuth UserCreated { get; set; }
         public ESituationOrderService Situacion { get; set; }
-        public ETypeMainteneace EType { get; set; }
+        public ETypeMainteneace Type { get; set; }
         public EPriority Priority { get; set; }
+        public ECategoty Category { get; set; }
         public List<DailyEntity> Daily { get; set; }
 
     }

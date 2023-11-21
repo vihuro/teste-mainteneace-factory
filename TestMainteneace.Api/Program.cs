@@ -13,6 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddCors(x => x.AddPolicy("corsPolicy", build =>
+{
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 builder.Services.ConfigureApplicationApp();
 builder.Services.ConfigurePersistenteApp(builder.Configuration);
 builder.Services.ConfigureMongoDbContext(builder.Configuration);
@@ -56,7 +61,7 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     });
 }
-
+app.UseCors("corsPolicy");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

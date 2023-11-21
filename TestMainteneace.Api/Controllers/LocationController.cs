@@ -8,7 +8,7 @@ using TesteMainteneace.Application.UseCases.Locale.GetByName;
 namespace TestMainteneace.Api.Controllers
 {
     [ApiController]
-    [Route("v1/api")]
+    [Route("api/v1/location")]
     public class LocationController : ControllerBase
     {
         private readonly IMediator _mediator;
