@@ -24,6 +24,6 @@ namespace TesteMainteneace.Application.UseCases.OrderService.GetAllOrderService
             var mapping = _mapper.Map<List<OrderServiceResponseDefault>>(result);
 
             return mapping;
-        }
+        } 
     }
 }
