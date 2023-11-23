@@ -5,9 +5,9 @@ using TesteMainteneace.Persistence.Context;
 
 namespace TesteMainteneace.Persistence.Repositories
 {
-    public class OderServiceRepository : BaseEntityIntRepository<OrderServiceEntity>, IOrderServiceRepository
+    public class OrderServiceRepository : BaseEntityIntRepository<OrderServiceEntity>, IOrderServiceRepository
     {
-        public OderServiceRepository(AppDbContext context) : base(context) { }
+        public OrderServiceRepository(AppDbContext context) : base(context) { }
 
         public async Task<List<OrderServiceEntity>> GetAllOrdersComplete(CancellationToken cancellationToken)
         {

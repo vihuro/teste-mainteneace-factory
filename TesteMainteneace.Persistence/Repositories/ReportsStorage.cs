@@ -31,9 +31,9 @@ namespace TesteMainteneace.Persistence.Repositories
 
                 list.Add(new ReportsStorageEntity
                 {
-                    Codigo = CustomReplace(value[0]),
-                    Descricao = CustomReplace(value[1]),
-                    Unidade = CustomReplace(value[2])
+                    Code = CustomReplace(value[0]),
+                    Description = CustomReplace(value[1]),
+                    Unity = CustomReplace(value[2])
                 });
             }
 

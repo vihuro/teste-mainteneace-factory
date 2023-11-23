@@ -2,8 +2,8 @@
 {
     public sealed class ReportsStorageEntity
     {
-        public string Codigo { get; set; }
-        public string Descricao { get; set; }
-        public string Unidade { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+        public string Unity { get; set; }
     }
 }
