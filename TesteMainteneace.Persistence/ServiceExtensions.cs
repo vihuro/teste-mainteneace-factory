@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TesteMainteneace.Domain.Interfaces.Location;
 using TesteMainteneace.Domain.Interfaces.Order;
+using TesteMainteneace.Domain.Interfaces.Reports;
 using TesteMainteneace.Domain.Interfaces.System;
 using TesteMainteneace.Domain.Interfaces.User;
 using TesteMainteneace.Persistence.Context;
@@ -25,12 +26,20 @@ namespace TesteMainteneace.Persistence
             });
             services.AddSingleton<MongoDbContext>();
 
+            services.Configure<AndressReportRadar>(op =>
+            {
+                op.Andress = configuration.GetSection("AndressReportRadar:Andress").Value;
+                op.Password = configuration.GetSection("AndressReportRadar:Password").Value;
+                op.User = configuration.GetSection("AndressReportRadar:User").Value;
+            });
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserAuthRepository, UserAuthRepository>();
             services.AddScoped<IUserAuthApiRepository, UserAuthApiRepository>();
             services.AddScoped<ILocaleExecutationRepository, LocaleExecurationRepository>();
             services.AddScoped<ILogsRepository, LogsRepository>();
             services.AddScoped<IOrderServiceRepository, OderServiceRepository>();
+            services.AddScoped<IReportsStorage, ReportsStorage>();
 
         }
     }

@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.22.0" />
+	<PackageReference Include="SharpCifs.Std" Version="0.2.13" />
+
   </ItemGroup>
 
 </Project>

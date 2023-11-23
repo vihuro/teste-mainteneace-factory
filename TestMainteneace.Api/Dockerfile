@@ -19,4 +19,5 @@ RUN dotnet publish "TestMainteneace.Api.csproj" -c Release -o /app/publish /p:Us
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
 ENTRYPOINT ["dotnet", "TestMainteneace.Api.dll"]
