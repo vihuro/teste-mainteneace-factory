@@ -9,6 +9,7 @@ namespace TestMainteneace.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/location")]
+    [Produces("application/json")]
     public class LocationController : ControllerBase
     {
         private readonly IMediator _mediator;

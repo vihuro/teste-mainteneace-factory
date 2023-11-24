@@ -38,9 +38,8 @@ namespace TesteMainteneace.Persistence.Repositories
         public async Task<T> GetById(int id, CancellationToken cancellationToken)
         {
             var entity = await Context.Set<T>()
-                        .FirstOrDefaultAsync(x => 
-                        x.Id == id, cancellationToken) ??
-                throw new Exception("Not found");
+                        .FirstOrDefaultAsync(x =>
+                        x.Id == id, cancellationToken);
             return entity;
         }
 

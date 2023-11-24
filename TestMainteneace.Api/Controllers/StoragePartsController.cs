@@ -9,6 +9,7 @@ namespace TestMainteneace.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/storage/parts")]
+    [Produces("application/json")]
     public class StoragePartsController : ControllerBase
     {
         private readonly IMediator _mediator;

@@ -6,6 +6,7 @@ namespace TestMainteneace.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/users-auth")]
+    [Produces("application/json")]
     public class UserAuthController : ControllerBase
     {
         private readonly IMediator _mediator;

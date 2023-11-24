@@ -28,5 +28,17 @@ namespace TesteMainteneace.Persistence.Repositories
 
             return item;
         }
+        public async Task<OrderServiceEntity> GetByIdComplete(int id, CancellationToken cancellationToken)
+        {
+            var item = await Context.Orders
+                                    .Include(l => l.LocationMainteneace)
+                                    .Include(u => u.UserCreated)
+                                    .AsNoTracking()
+                                    .FirstOrDefaultAsync(x =>
+                                       x.Id == id, cancellationToken);
+
+            return item;
+
+        }
     }
 }

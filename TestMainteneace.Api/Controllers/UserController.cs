@@ -18,7 +18,7 @@ namespace TestMainteneace.Api.Controllers
         }
 
         /// <summary>
-        /// Search for update users in this database
+        /// Search for update users for this database
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// 

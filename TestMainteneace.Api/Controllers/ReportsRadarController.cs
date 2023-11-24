@@ -6,6 +6,7 @@ namespace TestMainteneace.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/reports-radar/storage")]
+    [Produces("application/json")]
     public class ReportsRadarController : ControllerBase
     {
         private readonly IMediator _mediator;
