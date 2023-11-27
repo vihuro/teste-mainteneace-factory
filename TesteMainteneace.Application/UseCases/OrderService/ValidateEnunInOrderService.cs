@@ -39,7 +39,7 @@ namespace TesteMainteneace.Application.UseCases.OrderService
                 case ESituationOrderService.MAINTENEACE_INVALID:
                     return "MANUTENÇÃO INVÁLIDA";
                 case ESituationOrderService.ORDER_END:
-                    return "ORDER FINALIZADA";
+                    return "ORDEM FINALIZADA";
                 default:
                     return "STATUS NÃO ENCONTRADO";
             }

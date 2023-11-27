@@ -4,6 +4,7 @@ using TesteMainteneace.Application.UseCases.OrderService;
 using TesteMainteneace.Application.UseCases.OrderService.CreateOrderService;
 using TesteMainteneace.Application.UseCases.OrderService.GetAllOrderService;
 using TesteMainteneace.Application.UseCases.OrderService.GetById;
+using TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrder;
 
 namespace TestMainteneace.Api.Controllers
 {
@@ -60,6 +61,21 @@ namespace TestMainteneace.Api.Controllers
             var result = await _mediator.Send(new GetByIdRequest(id), cancellationToken);
 
             if (result == null) return NotFound("Order not found!");
+
+            return Ok(result);
+        }
+        /// <summary>
+        /// Update Situation
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// 
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<ActionResult<OrderServiceResponseDefault>> UpdateSituaction(UpdateSituationOrderRequest request, CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(request, cancellationToken);
+
 
             return Ok(result);
         }
