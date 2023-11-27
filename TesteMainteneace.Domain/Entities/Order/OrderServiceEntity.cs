@@ -3,6 +3,7 @@ using TesteMainteneace.Domain.Entities.Base;
 using TesteMainteneace.Domain.Entities.Daily;
 using TesteMainteneace.Domain.Entities.Location;
 using TesteMainteneace.Domain.Entities.Order.Enun;
+using TesteMainteneace.Domain.Entities.StatusOrder;
 using TesteMainteneace.Domain.Entities.User;
 
 namespace TesteMainteneace.Domain.Entities.Order
@@ -13,6 +14,7 @@ namespace TesteMainteneace.Domain.Entities.Order
         public string Description { get; set; }
         public int LocationMainteneaceId { get; set; }
         public LocalExecutationEntity LocationMainteneace { get; set; }
+        public List<FlowOrderServiceEntity> ListFlow { get; set; }
         public DateTime SuggestedMainteneaceDate { get; set; }
         public Guid UserCreatedId { get; set; }
         public UserAuth UserCreated { get; set; }

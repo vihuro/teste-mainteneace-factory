@@ -14,6 +14,8 @@ namespace TesteMainteneace.Persistence.Repositories
             var item = await Context.Orders
                 .Include(l => l.LocationMainteneace)
                 .Include(u => u.UserCreated)
+                .Include(f => f.ListFlow)
+                    .ThenInclude(f => f.Flow)
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
 
@@ -33,6 +35,14 @@ namespace TesteMainteneace.Persistence.Repositories
             var item = await Context.Orders
                                     .Include(l => l.LocationMainteneace)
                                     .Include(u => u.UserCreated)
+                                    .Include(f => f.ListFlow)
+                                        .ThenInclude(f => f.Flow)
+                                    .Include(f => f.ListFlow)
+                                        .ThenInclude(u => u.InitialUserFlow)
+                                        .ThenInclude(u => u.UserInitial)
+                                    .Include(f => f.ListFlow)
+                                        .ThenInclude(u => u.EndUserFlow)
+                                        .ThenInclude(u => u.UserEnd)
                                     .AsNoTracking()
                                     .FirstOrDefaultAsync(x =>
                                        x.Id == id, cancellationToken);

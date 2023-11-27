@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TesteMainteneace.Persistence.Context;
@@ -11,9 +12,11 @@ using TesteMainteneace.Persistence.Context;
 namespace TestMainteneace.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231125133557_UpdateTableOrderServiceForUseListFlow")]
+    partial class UpdateTableOrderServiceForUseListFlow
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -212,7 +215,10 @@ namespace TestMainteneace.Api.Migrations
                     b.Property<int>("FlowId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("OrderServiceId")
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("OrderServiceId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -387,9 +393,7 @@ namespace TestMainteneace.Api.Migrations
 
                     b.HasOne("TesteMainteneace.Domain.Entities.Order.OrderServiceEntity", "OrderService")
                         .WithMany("ListFlow")
-                        .HasForeignKey("OrderServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderServiceId");
 
                     b.Navigation("Flow");
 

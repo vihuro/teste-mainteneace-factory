@@ -7,9 +7,10 @@ using TesteMainteneace.Domain.Entities.OrderFlow.UserFlow;
 namespace TesteMainteneace.Domain.Entities.StatusOrder
 {
     [Table("tab_flow_order_service")]
-    public sealed class FlowOrderServiceEntity : BaseEntityInt
+    public sealed class FlowOrderServiceEntity 
     {
-        public int OrderId { get; set; }
+        public int Id { get; set; }
+        public int OrderServiceId { get; set; }
         public OrderServiceEntity OrderService { get; set; }
         public int FlowId { get; set; }
         public FlowEntity Flow { get; set; }

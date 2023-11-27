@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TesteMainteneace.Domain.Interfaces.Flow;
 using TesteMainteneace.Domain.Interfaces.Location;
 using TesteMainteneace.Domain.Interfaces.Order;
 using TesteMainteneace.Domain.Interfaces.Reports;
@@ -42,6 +43,7 @@ namespace TesteMainteneace.Persistence
             services.AddScoped<IOrderServiceRepository, OrderServiceRepository>();
             services.AddScoped<IReportsStorage, ReportsStorage>();
             services.AddScoped<IStoragePartsRepository, StoragePartsRepository>();
+            services.AddScoped<IFlowRepository, FlowRepository>();
 
         }
 

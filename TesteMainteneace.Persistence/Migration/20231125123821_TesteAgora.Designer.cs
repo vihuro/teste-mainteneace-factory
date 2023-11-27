@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TesteMainteneace.Persistence.Context;
@@ -11,9 +12,11 @@ using TesteMainteneace.Persistence.Context;
 namespace TestMainteneace.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231125123821_TesteAgora")]
+    partial class TesteAgora
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -206,13 +209,22 @@ namespace TestMainteneace.Api.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("DateUpdated")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
                     b.Property<int>("FlowId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("OrderServiceId")
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("OrderServiceId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -386,10 +398,8 @@ namespace TestMainteneace.Api.Migrations
                         .IsRequired();
 
                     b.HasOne("TesteMainteneace.Domain.Entities.Order.OrderServiceEntity", "OrderService")
-                        .WithMany("ListFlow")
-                        .HasForeignKey("OrderServiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("OrderServiceId");
 
                     b.Navigation("Flow");
 
@@ -399,8 +409,6 @@ namespace TestMainteneace.Api.Migrations
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.Order.OrderServiceEntity", b =>
                 {
                     b.Navigation("Daily");
-
-                    b.Navigation("ListFlow");
                 });
 
             modelBuilder.Entity("TesteMainteneace.Domain.Entities.StatusOrder.FlowOrderServiceEntity", b =>

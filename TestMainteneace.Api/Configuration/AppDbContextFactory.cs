@@ -16,12 +16,12 @@ namespace TestMainteneace.Api.Configuration
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile($"appsettings.{environmentName}.json")
                 .Build();
-
+            
             var assemblyName = typeof(AppDbContext).Namespace;
 
             var builder = new DbContextOptionsBuilder<AppDbContext>()
                 .UseNpgsql(config.GetConnectionString("teste_mainteneace"),
-                                                        b => b.MigrationsAssembly("TestMainteneace.Api")).Options;
+                                                        b => b.MigrationsAssembly("TesteMainteneace.Persistence")).Options;
 
             return new AppDbContext(builder);
         }
