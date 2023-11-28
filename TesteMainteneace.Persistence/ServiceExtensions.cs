@@ -44,6 +44,7 @@ namespace TesteMainteneace.Persistence
             services.AddScoped<IReportsStorage, ReportsStorage>();
             services.AddScoped<IStoragePartsRepository, StoragePartsRepository>();
             services.AddScoped<IFlowRepository, FlowRepository>();
+            services.AddScoped<IFlowInOrderServiceRepository, FlowInOrderServiceRepository>();
 
         }
 

@@ -19,11 +19,13 @@ namespace TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrde
 
         public UpdateSituationOrderHandle(IUnitOfWork unitOfWork,
                                             IOrderServiceRepository orderRepository,
-                                            IMapper mapper)
+                                            IMapper mapper,
+                                            IFlowInOrderServiceRepository flowRepository)
         {
             _unitOfWork = unitOfWork;
             _orderRepository = orderRepository;
             _mapper = mapper;
+            _flowInOrderServiceRepository = flowRepository;
         }
 
         public async Task<OrderServiceResponseDefault> Handle(UpdateSituationOrderRequest request,
@@ -38,9 +40,7 @@ namespace TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrde
 
             _orderRepository.Updated(entity);
 
-            var listFlow = await _flowInOrderServiceRepository.GetFlowByOrderServiceId(request.IdOrderService);
-
-            await HandleFlowInOrderService(situation,0,request.IdOrderService,request.UserId);
+            await HandleFlowInOrderService(situation, request.FlowId, request.IdOrderService, request.UserId);
 
             await _unitOfWork.Commit(cancellationToken);
 
@@ -51,10 +51,49 @@ namespace TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrde
             return result;
 
         }
-        private async Task HandleFlowInOrderService(ESituationOrderService situation, 
+        private async Task HandleFlowInOrderService(ESituationOrderService situation,
                                                     int flowId, int orderServiceId, Guid userId)
         {
+            switch (situation)
+            {
+                case ESituationOrderService.WAITING_ATRIBUIATION:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.ORDER_INVALID:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId + 1, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.WAITING_MAINTENEACE:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId + 2, orderServiceId, userId);
 
+                    break;
+                case ESituationOrderService.IN_MAINTENEACE:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId + 1, orderServiceId, userId);
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId + 1, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.WAITING_PARTS:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.WAITING_AUTORIZATION_PARTS:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.MAINTENEACE_END:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.MAINTENEACE_INVALID:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+                case ESituationOrderService.ORDER_END:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+                default:
+                    await _flowInOrderServiceRepository.ValidateFlow(flowId, orderServiceId, userId);
+                    break;
+
+            }
         }
 
         private static ESituationOrderService ValidateSituation(int typeSituation)

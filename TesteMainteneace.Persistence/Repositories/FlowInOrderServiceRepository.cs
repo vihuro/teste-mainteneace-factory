@@ -13,56 +13,9 @@ namespace TesteMainteneace.Persistence.Repositories
         {
             _context = context;
         }
-        public Task MainteneaceEnd()
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task MainteneaceInvalid()
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task MainteneaceStart()
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task OrderServiceEnd()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task WaitingAtribuation(int flowId, int OrderServiceId, Guid userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task WaitingMainteneace()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task WaitingMainteneace(int flowId, int orderServiceId, Guid userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task WaitingOrderServiceInvalid(int flowId, int orderServiceId, Guid userId)
-        {
-            var flowInOrderService = await _context.FlowInOrderService
-                                    .SingleOrDefaultAsync(f => f.FlowId == flowId);
-
-            if (flowInOrderService.InitialUserFlow == null)
-            {
-                flowInOrderService.InitialUserFlow = new InitialUserFlow
-                {
-                    DateCreateded = DateTime.UtcNow,
-                    FlowOrderServiceId = flowId,
-                    UserInitialId = userId
-                };
-            }
-        }
         public async Task<List<FlowOrderServiceEntity>> GetFlowByOrderServiceId(int orderServiceId)
         {
             var listFlow = await _context.FlowInOrderService
@@ -73,9 +26,33 @@ namespace TesteMainteneace.Persistence.Repositories
 
         }
 
-        public Task WaitingParts()
+
+
+        public async Task ValidateFlow(int flowId, int OrderServiceId, Guid userId)
         {
-            throw new NotImplementedException();
+            var entity = await _context.FlowInOrderService
+                        .Include(u => u.InitialUserFlow)
+                        .Include(u => u.EndUserFlow)
+                        .SingleOrDefaultAsync(f => f.Id == flowId);
+
+            if (entity.InitialUserFlow == null)
+            {
+                entity.InitialUserFlow = new InitialUserFlow
+                {
+                    DateCreateded = DateTime.UtcNow,
+                    FlowOrderServiceId = flowId,
+                    UserInitialId = userId
+                };
+            }
+            else
+            {
+                entity.EndUserFlow = new EndUserFlow
+                {
+                    DateEnd = DateTime.UtcNow,
+                    FlowOrderServiceId = flowId,
+                    UserEndId = userId
+                };
+            }
         }
     }
 }
