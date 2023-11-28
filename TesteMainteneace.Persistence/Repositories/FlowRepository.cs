@@ -14,7 +14,7 @@ namespace TesteMainteneace.Persistence.Repositories
         }
         public async Task<List<FlowEntity>> GetList(CancellationToken cancellationToken)
         {
-            var list = await _context.Flow.ToListAsync();
+            var list = await _context.Flow.ToListAsync(cancellationToken);
 
             return list;
         }

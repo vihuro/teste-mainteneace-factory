@@ -11,7 +11,7 @@ namespace TestMainteneace.Api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("INSERT INTO tab_flow (\"Id\",\"TypeFlow\") VALUES('1','AGUARDANDO ATRIBUIÇÃO')");
-            migrationBuilder.Sql("INSERT INTO tab_flow (\"Id\",\"TypeFlow\") VALUES('2','ORDEM DE SEVIÇO INVÁLIDA')");
+            migrationBuilder.Sql("INSERT INTO tab_flow (\"Id\",\"TypeFlow\") VALUES('2','ORDEM DE SERVIÇO INVÁLIDA')");
             migrationBuilder.Sql("INSERT INTO tab_flow (\"Id\",\"TypeFlow\") VALUES('3','AGUARDANDO MANUTENÇÃO')");
             migrationBuilder.Sql("INSERT INTO tab_flow (\"Id\",\"TypeFlow\") VALUES('4','MANUTENÇÃO INICIADA')");
             migrationBuilder.Sql("INSERT INTO tab_flow (\"Id\",\"TypeFlow\") VALUES('5','AGUARDANDO PEÇAS')");

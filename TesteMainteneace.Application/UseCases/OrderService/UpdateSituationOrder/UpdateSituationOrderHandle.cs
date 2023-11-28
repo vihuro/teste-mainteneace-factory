@@ -3,6 +3,7 @@
 using AutoMapper;
 using MediatR;
 using TesteMainteneace.Domain.Entities.Order.Enun;
+using TesteMainteneace.Domain.Interfaces.Flow;
 using TesteMainteneace.Domain.Interfaces.Order;
 using TesteMainteneace.Domain.Interfaces.System;
 
@@ -14,9 +15,10 @@ namespace TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrde
         private readonly IUnitOfWork _unitOfWork;
         private readonly IOrderServiceRepository _orderRepository;
         private readonly IMapper _mapper;
+        private readonly IFlowInOrderServiceRepository _flowInOrderServiceRepository;
 
-        public UpdateSituationOrderHandle(IUnitOfWork unitOfWork, 
-                                            IOrderServiceRepository orderRepository, 
+        public UpdateSituationOrderHandle(IUnitOfWork unitOfWork,
+                                            IOrderServiceRepository orderRepository,
                                             IMapper mapper)
         {
             _unitOfWork = unitOfWork;
@@ -29,10 +31,16 @@ namespace TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrde
         {
             var entity = await _orderRepository.GetById(request.IdOrderService, cancellationToken);
 
+            var situation = ValidateSituation(request.TypeSituation);
+
             entity.DateUpdated = DateTime.UtcNow;
-            entity.Situacion = ValidateSituation(request.TypeSituation);
+            entity.Situacion = situation;
 
             _orderRepository.Updated(entity);
+
+            var listFlow = await _flowInOrderServiceRepository.GetFlowByOrderServiceId(request.IdOrderService);
+
+            await HandleFlowInOrderService(situation,0,request.IdOrderService,request.UserId);
 
             await _unitOfWork.Commit(cancellationToken);
 
@@ -41,6 +49,11 @@ namespace TesteMainteneace.Application.UseCases.OrderService.UpdateSituationOrde
             var result = _mapper.Map<OrderServiceResponseDefault>(entity);
 
             return result;
+
+        }
+        private async Task HandleFlowInOrderService(ESituationOrderService situation, 
+                                                    int flowId, int orderServiceId, Guid userId)
+        {
 
         }
 
